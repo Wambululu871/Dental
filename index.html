@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nairobi Smile Dental | Expert Dental Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2545;
+    --blue: #1565C0;
+    --sky: #1E88E5;
+    --light-blue: #E3F2FD;
+    --accent: #00ACC1;
+    --white: #FFFFFF;
+    --off-white: #F8FBFF;
+    --text: #1A2B3C;
+    --muted: #607D8B;
+    --border: #DDEEFF;
+    --whatsapp: #25D366;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: var(--blue);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+
+  .nav-logo-text span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--blue); }
+
+  .nav-cta {
+    background: var(--blue);
+    color: white !important;
+    padding: 9px 20px;
+    border-radius: 8px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--navy) !important; color: white !important; }
+
+  .nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .nav-mobile-toggle span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding-top: 68px;
+    background: linear-gradient(135deg, var(--navy) 0%, #1B4F8F 50%, var(--sky) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,172,193,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(30,136,229,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-desc {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 440px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--navy);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.4);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.7);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: 44px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .hero-stat-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    animation: floatUp 0.8s ease both;
+  }
+
+  @keyframes floatUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-card-icon {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .hero-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 3px;
+  }
+
+  .hero-card-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .trust-item span { font-size: 16px; }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 520px;
+  }
+
+  /* SERVICES */
+  #services { background: var(--off-white); }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .services-header .section-desc { margin: 0 auto; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), var(--accent));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(11,37,69,0.1);
+    border-color: transparent;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 56px; height: 56px;
+    background: var(--light-blue);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .service-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .service-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 10px; }
+
+  /* DOCTOR */
+  #doctor { background: white; }
+
+  .doctor-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .doctor-img-wrap {
+    position: relative;
+  }
+
+  .doctor-img-bg {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--light-blue), #BBDEFB);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .doctor-img-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(21,101,192,0.12), transparent);
+  }
+
+  .doctor-badge-card {
+    position: absolute;
+    bottom: -16px; right: -16px;
+    background: var(--navy);
+    color: white;
+    border-radius: 14px;
+    padding: 16px 20px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(11,37,69,0.3);
+  }
+
+  .doctor-badge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .doctor-badge-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    margin-top: 2px;
+  }
+
+  .doctor-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .doctor-title {
+    font-size: 14px;
+    color: var(--sky);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .doctor-bio {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+
+  .doctor-quals {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .doctor-qual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .doctor-qual-icon {
+    width: 32px; height: 32px;
+    background: var(--light-blue);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  /* WHY US */
+  #why { background: var(--off-white); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .why-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(11,37,69,0.08);
+  }
+
+  .why-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .why-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* MAP & CONTACT */
+  #contact { background: white; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 52px;
+  }
+
+  .map-placeholder {
+    background: var(--light-blue);
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px dashed #90CAF9;
+    position: relative;
+  }
+
+  .map-placeholder-icon { font-size: 48px; }
+
+  .map-placeholder-text {
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .map-address {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    text-align: center;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--off-white);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+  }
+
+  .contact-item-icon {
+    width: 44px; height: 44px;
+    background: var(--light-blue);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .contact-item-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 5px;
+  }
+
+  .contact-item-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .contact-wa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--whatsapp);
+    color: white;
+    padding: 16px 24px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.3);
+  }
+
+  .contact-wa-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37,211,102,0.4);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    list-style: none;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: white; }
+
+  .footer-copy { font-size: 12px; }
+
+  /* WHATSAPP FLOAT */
+  .wa-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--whatsapp);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 30px rgba(37,211,102,0.45);
+    transition: all 0.3s;
+    animation: slideIn 0.6s 1s both;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(80px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .wa-float:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(37,211,102,0.55);
+  }
+
+  .wa-float-icon { font-size: 22px; }
+
+  .wa-pulse {
+    position: absolute;
+    top: -4px; right: -4px;
+    width: 14px; height: 14px;
+    background: #FF5252;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: badgePulse 2s infinite;
+  }
+
+  @keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
+
+    .hero-actions { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-desc { margin: 0 auto 36px; }
+
+    .hero-visual { display: none; }
+
+    .doctor-inner { grid-template-columns: 1fr; gap: 40px; }
+    .doctor-img-wrap { max-width: 320px; margin: 0 auto; }
+
+    .contact-grid { grid-template-columns: 1fr; }
+
+    .trust-bar { gap: 16px; }
+    .trust-item { font-size: 12px; }
+
+    .wa-float span:not(.wa-float-icon):not(.wa-pulse) { display: none; }
+    .wa-float { padding: 14px; }
+
+    section { padding: 60px 20px; }
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🦷</div>
+    <div class="nav-logo-text">
+      Nairobi Smile Dental
+      <span>Expert Dental Care</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctor">Our Doctor</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/254700000000" class="nav-cta">Book Appointment</a></li>
+  </ul>
+  <button class="nav-mobile-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">Now Accepting New Patients</div>
+      <h1 class="hero-title">
+        Your <em>Healthiest</em><br>Smile Starts Here
+      </h1>
+      <p class="hero-desc">
+        Professional, gentle dental care in the heart of Nairobi. From routine check-ups to complete smile transformations — we're here for every step.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/254700000000" class="btn-primary">
+          📅 Book Appointment
+        </a>
+        <a href="#services" class="btn-outline">
+          Our Services →
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">2,000+</div>
+          <div class="hero-stat-label">Happy Patients</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">12+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Patient Rating</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">📅</div>
+        <div>
+          <div class="hero-card-title">Easy Booking</div>
+          <div class="hero-card-sub">Book via WhatsApp in seconds</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">💉</div>
+        <div>
+          <div class="hero-card-title">Pain-Free Procedures</div>
+          <div class="hero-card-sub">Modern equipment & techniques</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">⏰</div>
+        <div>
+          <div class="hero-card-title">Mon – Sat, 8am – 6pm</div>
+          <div class="hero-card-sub">Flexible appointment slots</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🏥</div>
+        <div>
+          <div class="hero-card-title">Insurance Accepted</div>
+          <div class="hero-card-sub">Most major plans welcome</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>✅</span> Registered with Kenya Dental Association</div>
+  <div class="trust-item"><span>🛡️</span> Fully Sterilised Equipment</div>
+  <div class="trust-item"><span>💳</span> M-Pesa & Insurance Accepted</div>
+  <div class="trust-item"><span>📍</span> Westlands, Nairobi</div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="services-header fade-up">
+      <div class="section-label">What We Offer</div>
+      <h2 class="section-title">Comprehensive Dental Services</h2>
+      <p class="section-desc">From your first check-up to advanced treatments, we provide complete dental care for the whole family.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-icon">🦷</div>
+        <div class="service-title">General Dentistry</div>
+        <p class="service-desc">Routine check-ups, professional cleaning, fillings, and preventive care to keep your teeth healthy and strong.</p>
+        <a href="https://wa.me/254700000000" class="service-link">Book a check-up →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">✨</div>
+        <div class="service-title">Teeth Whitening</div>
+        <p class="service-desc">Professional in-clinic whitening treatments that safely brighten your smile by several shades in just one visit.</p>
+        <a href="https://wa.me/254700000000" class="service-link">Get a brighter smile →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">😁</div>
+        <div class="service-title">Braces & Aligners</div>
+        <p class="service-desc">Traditional braces and clear aligner options to straighten your teeth comfortably and effectively at any age.</p>
+        <a href="https://wa.me/254700000000" class="service-link">Start your journey →</a>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🔧</div>
+        <div class="service-title">Extractions</div>
+        <p class="service-desc">Gentle tooth extractions including wisdom teeth removal, performed with care and minimal discomfort.</p>
+        <a href="https://wa.me/254700000000" class="service-link">Book a consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section id="doctor">
+  <div class="section-inner">
+    <div class="doctor-inner">
+      <div class="doctor-img-wrap fade-up">
+        <div class="doctor-img-bg">👩‍⚕️</div>
+        <div class="doctor-badge-card">
+          <div class="doctor-badge-num">12+</div>
+          <div class="doctor-badge-label">Years Experience</div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="section-label">Meet the Doctor</div>
+        <h2 class="doctor-name">Dr. Amina Wanjiku</h2>
+        <div class="doctor-title">BDS (UoN) · Lead Dentist & Founder</div>
+        <p class="doctor-bio">
+          Dr. Wanjiku founded Nairobi Smile Dental with a simple mission: to make quality dental care accessible, comfortable, and stress-free for every patient. With over 12 years of experience, she specialises in cosmetic and restorative dentistry and is known for her gentle, patient-first approach.
+        </p>
+        <div class="doctor-quals">
+          <div class="doctor-qual">
+            <div class="doctor-qual-icon">🎓</div>
+            Bachelor of Dental Surgery — University of Nairobi
+          </div>
+          <div class="doctor-qual">
+            <div class="doctor-qual-icon">🏅</div>
+            Member, Kenya Dental Association
+          </div>
+          <div class="doctor-qual">
+            <div class="doctor-qual-icon">🌍</div>
+            Advanced Training in Orthodontics — South Africa
+          </div>
+          <div class="doctor-qual">
+            <div class="doctor-qual-icon">💬</div>
+            Fluent in English, Swahili & Kikuyu
+          </div>
+        </div>
+        <a href="https://wa.me/254700000000" class="btn-primary" style="background: var(--blue); color: white; display: inline-flex;">
+          📅 Book with Dr. Wanjiku
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div style="text-align:center;" class="fade-up">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Dental Care You Can Trust</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-up">
+        <div class="why-icon">😌</div>
+        <div class="why-title">Gentle & Painless</div>
+        <p class="why-desc">Modern techniques and compassionate care mean most procedures are completely comfortable.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">⚡</div>
+        <div class="why-title">Quick Appointments</div>
+        <p class="why-desc">We respect your time. Most appointments run on schedule with minimal waiting.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">🧼</div>
+        <div class="why-title">Fully Sterilised</div>
+        <p class="why-desc">All equipment is fully sterilised before every appointment. Your safety is our priority.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">💳</div>
+        <div class="why-title">M-Pesa & Insurance</div>
+        <p class="why-desc">We accept M-Pesa, cash, and most major insurance plans for your convenience.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">👨‍👩‍👧</div>
+        <div class="why-title">Family Friendly</div>
+        <p class="why-desc">We welcome patients of all ages — from children to seniors — with care tailored to each.</p>
+      </div>
+      <div class="why-card fade-up">
+        <div class="why-icon">📍</div>
+        <div class="why-title">Easy to Find</div>
+        <p class="why-desc">Centrally located in Westlands with ample parking and easy matatu access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & MAP -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Visit Us or Book Online</h2>
+      <p class="section-desc">Ready for a healthier smile? Book your appointment via WhatsApp or come visit us in Westlands.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="map-placeholder fade-up">
+        <div class="map-placeholder-icon">📍</div>
+        <p class="map-placeholder-text">
+          <strong style="color: var(--navy);">Nairobi Smile Dental</strong><br>
+          Google Maps will appear here
+        </p>
+        <div class="map-address">Westlands, Nairobi, Kenya</div>
+        <a href="https://maps.google.com" target="_blank" style="margin-top:8px; font-size:13px; color: var(--blue); font-weight:600; text-decoration:none;">
+          Get Directions →
+        </a>
+      </div>
+      <div class="contact-details fade-up">
+        <div class="contact-item">
+          <div class="contact-item-icon">📱</div>
+          <div>
+            <div class="contact-item-label">WhatsApp / Phone</div>
+            <div class="contact-item-value">+254 700 000 000</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Westlands, Nairobi</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">⏰</div>
+          <div>
+            <div class="contact-item-label">Opening Hours</div>
+            <div class="contact-item-value">Mon – Fri: 8am – 6pm<br>Saturday: 8am – 3pm</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">hello@nairobismiledental.co.ke</div>
+          </div>
+        </div>
+        <a href="https://wa.me/254700000000" class="contact-wa-btn">
+          <span style="font-size:22px;">💬</span>
+          Book Appointment on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🦷 Nairobi Smile Dental</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#doctor">Our Doctor</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://wa.me/254700000000">Book Appointment</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Nairobi Smile Dental. All rights reserved. | Westlands, Nairobi</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/254700000000" class="wa-float" target="_blank">
+  <span class="wa-float-icon">💬</span>
+  <span>Book on WhatsApp</span>
+  <div class="wa-pulse"></div>
+</a>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = '';
+    } else {
+      links.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:68px; left:0; right:0; background:white; padding:24px; gap:20px; border-bottom:1px solid #DDEEFF; z-index:99;';
+    }
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelector('.nav-links').style.display = '';
+    });
+  });
+</script>
+
+</body>
+</html>
